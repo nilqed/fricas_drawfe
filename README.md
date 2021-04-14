@@ -27,6 +27,36 @@ For the demo you have to install at least ``gnuplot-qt``:
 	gnuplot-nox/bionic 5.2.2+dfsg1-2ubuntu1 amd64
 	gnuplot-qt/bionic,now 5.2.2+dfsg1-2ubuntu1 amd64 [installed]
 	gnuplot-x11/bionic 5.2.2+dfsg1-2ubuntu1 amd64
+	
+Test GnuPlot:
+
+        $ gnuplot
+        ...
+        Terminal type is now 'qt'
+        gnuplot> 
+        gnuplot> test
+        gnuplot> help term
+        Subtopics available for term:
+        cairolatex        canvas            cgm               context
+        domterm           dumb              dxf               eepic
+        emf               emtex             epscairo          epslatex
+        fig               gif               hpgl              jpeg
+        latex             lua               mf                mp
+        pcl5              pdfcairo          png               pngcairo
+        pop               postscript        pslatex           pstex
+        pstricks          push              qms               qt
+        sixelgd           svg               tek40xx           tek410x
+        texdraw           tgif              tikz              tkcanvas
+        Press return for more: 
+        tpic              vttek             wxt               x11
+        xlib              xterm
+	
+        gnuplot> set term dumb ; test
+        gnuplot> exit
+
+	
+Demo
+----
 
 > Run ``demo_drawfe.input`` for a full demo (there is a ``wait`` macro such that you can close
 > the windows from time to time ;)
@@ -37,7 +67,7 @@ For the demo you have to install at least ``gnuplot-qt``:
 Explanation
 -----------
 
-> The 3 files have to be compiled in the following order:
+> This 3 files have to be compiled in the following order:
 
 	)co drawfe
 	)co view2D+
@@ -74,7 +104,7 @@ Explanation
         
         draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
 
-The difference is that you can interactively **rotate**, **scale**, ... the surface :)
+The difference is that you can interactively **rotate**, **scale**, ... the surface with the **mouse** :)
 
 ![wxt](docs/wxt.png)
 
