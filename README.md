@@ -39,32 +39,35 @@ For the demo you have to install at least ``gnuplot-qt``:
 > Example (viewman, default)
 
 	draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
+	
+
+![viewman](docs/vieman.png)
 
 
 > Get/set a frontend (gnuplot/qt):
 
-	fe3D := getFrontend3D()
-
+        fe3D := getFrontend3D()
+        
         fe3D.'type    := "gnuplot"
         fe3D.'output  := "data3d.gpl"
         fe3D.'display := "qt"
-
-	setFrontend3D(fe3D)
-
+        
+        setFrontend3D(fe3D)
+        
         draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
 
 
 > Set display to ``wxt``
 
-	fe3D.'display := "qt"
+        fe3D.'display := "qt"
         setFrontend3D(fe3D)
-
+        
         draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
 
 
 > Back to viewman:
 
-	fe3D.'type := "vieman"
+        fe3D.'type := "vieman"
         setFrontend3D(fe3D)
 
 
@@ -72,8 +75,8 @@ Non-interactive (create Postscript, SVG etc.)
 ---------------------------------------------
 
 Details in ``demo_drawfe.input``:
-
-	fe3D.'display:="postscript; set output 'test.ps'"
+        
+        fe3D.'display:="postscript; set output 'test.ps'"
         setFrontend3D(fe3D)
         draw(surface(n1,n2,n3), 1..4, 1..2*%pi, coordinates == toroidal(1$DFLOAT)) 
 
