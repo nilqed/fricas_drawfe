@@ -41,7 +41,7 @@ For the demo you have to install at least ``gnuplot-qt``:
 	draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
 	
 
-![viewman](docs/vieman.png)
+![viewman](docs/viewman.png)
 
 
 > Get/set a frontend (gnuplot/qt):
@@ -56,6 +56,8 @@ For the demo you have to install at least ``gnuplot-qt``:
         
         draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
 
+![qt](docs/qt.png)
+
 
 > Set display to ``wxt``
 
@@ -63,6 +65,10 @@ For the demo you have to install at least ``gnuplot-qt``:
         setFrontend3D(fe3D)
         
         draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
+
+The difference is that you can interactively **rotate**, **scale**, ... the surface :)
+
+![wxt](docs/wxt.png)
 
 
 > Back to viewman:
