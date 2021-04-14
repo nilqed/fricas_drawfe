@@ -28,6 +28,14 @@ For the demo you have to install at least ``gnuplot-qt``:
 	gnuplot-qt/bionic,now 5.2.2+dfsg1-2ubuntu1 amd64 [installed]
 	gnuplot-x11/bionic 5.2.2+dfsg1-2ubuntu1 amd64
 
+> Run ``demo_drawfe.input`` for a full demo (there is a ``wait`` macro such that you can close
+> the windows from time to time ;)
+
+        )read demo_drawfe
+
+
+Explanation
+-----------
 
 > The 3 files have to be compiled in the following order:
 
@@ -85,20 +93,26 @@ Details in ``demo_drawfe.input``:
         fe3D.'display:="postscript; set output 'test.ps'"
         setFrontend3D(fe3D)
         draw(surface(n1,n2,n3), 1..4, 1..2*%pi, coordinates == toroidal(1$DFLOAT)) 
+	
+![test](docs/test.png)
 
         fe3D.'display:="postscript; set output 'test2.ps'"
         setFrontend3D(fe3D)
         draw(m, 0..2*%pi,0..%pi, coordinates == spherical) 
+	
+![test](docs/test2.png)
 
         fe3D.'display:="svg background 'black'; set output 'test.svg'"
         setFrontend3D(fe3D)
         draw(curve(5*cos(t), 5*sin(t),t), t=-12..12) 
+	
+![test.svg](docs/test.svg)
 
         fe3D.'display:="svg background 'blue'; set output 'test2.svg'"
         setFrontend3D(fe3D)
         draw(m, 0..2*%pi,0..%pi, coordinates == spherical) 
 
-
+![test2.svg](docs/test2.svg)
 
 
  
