@@ -15,6 +15,9 @@ necessary. To avoid confusion the files were (temporarily) renamed to
 
 For the demo you have to install at least ``gnuplot-qt``:
 
+[Gnuplot Home](http://www.gnuplot.info/)
+
+[Gnuplot documentation (PDF)](http://www.gnuplot.info/docs_5.4/Gnuplot_5_4.pdf)
 
 	$ sudo apt install gnuplot-qt
 	
