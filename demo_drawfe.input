@@ -7,8 +7,8 @@
 
 macro wait ==
     output("** continue <RETURN> or 'q' for Quit. **")
-	q:=READ_-LINE()$Lisp
-	string q="q" => systemCommand("quit")$MoreSystemCommands
+    q:=READ_-LINE()$Lisp
+    string q="q" => systemCommand("quit")$MoreSystemCommands
 
 
 -- Setting/getting frontends
@@ -39,8 +39,7 @@ draw([i::DF for i in 1..10],[sqrt(i)::DF for i in 1..10])
 draw(exp(-x^2),x=-1..1,title=="Exp Function", style=="lc 'blue' lw 2 with lines") 
 draw(cos(x*y),x=-3..3,y=-3..3,title=="3d Example", style=="lc 'blue' lw 2 with lines")
 draw(cos(x*y),x=-3..3,y=-3..3,title=="3d Example", style=="with surface", var1Steps == 100,var2Steps==100)
-draw(cos(x*y),x=-3..3,y=-3..3,title=="3d Example", style=="with pm3d", var1Steps ==
-100,var2Steps==100)
+draw(cos(x*y),x=-3..3,y=-3..3,title=="3d Example", style=="with pm3d", var1Steps ==100, var2Steps==100)
 wait
 
 -- from book 7.1.1 ff.

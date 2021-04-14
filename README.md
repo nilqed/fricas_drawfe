@@ -16,8 +16,8 @@ necessary. To avoid confusion the files were (temporarily) renamed to
 For the demo you have to install at least ``gnuplot-qt``:
 
 
-        $ sudo apt install gnuplot-qt
-
+	$ sudo apt install gnuplot-qt
+	
 	$ apt list gnuplot*
 	Listing... Done
 	gnuplot/bionic,bionic 5.2.2+dfsg1-2ubuntu1 all
@@ -29,3 +29,67 @@ For the demo you have to install at least ``gnuplot-qt``:
 	gnuplot-x11/bionic 5.2.2+dfsg1-2ubuntu1 amd64
 
 
+> The 3 files have to be compiled in the following order:
+
+	)co drawfe
+	)co view2D+
+	)co view3D+
+
+
+> Example (viewman, default)
+
+	draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
+
+
+> Get/set a frontend (gnuplot/qt):
+
+	fe3D := getFrontend3D()
+
+        fe3D.'type    := "gnuplot"
+        fe3D.'output  := "data3d.gpl"
+        fe3D.'display := "qt"
+
+	setFrontend3D(fe3D)
+
+        draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
+
+
+> Set display to ``wxt``
+
+	fe3D.'display := "qt"
+        setFrontend3D(fe3D)
+
+        draw(surface(u*cos(v), u*sin(v), v*cos(u)), u=-4..4, v=0..%pi, coordinates== parabolicCylindrical)
+
+
+> Back to viewman:
+
+	fe3D.'type := "vieman"
+        setFrontend3D(fe3D)
+
+
+Non-interactive (create Postscript, SVG etc.)
+---------------------------------------------
+
+Details in ``demo_drawfe.input``:
+
+	fe3D.'display:="postscript; set output 'test.ps'"
+        setFrontend3D(fe3D)
+        draw(surface(n1,n2,n3), 1..4, 1..2*%pi, coordinates == toroidal(1$DFLOAT)) 
+
+        fe3D.'display:="postscript; set output 'test2.ps'"
+        setFrontend3D(fe3D)
+        draw(m, 0..2*%pi,0..%pi, coordinates == spherical) 
+
+        fe3D.'display:="svg background 'black'; set output 'test.svg'"
+        setFrontend3D(fe3D)
+        draw(curve(5*cos(t), 5*sin(t),t), t=-12..12) 
+
+        fe3D.'display:="svg background 'blue'; set output 'test2.svg'"
+        setFrontend3D(fe3D)
+        draw(m, 0..2*%pi,0..%pi, coordinates == spherical) 
+
+
+
+
+ 
